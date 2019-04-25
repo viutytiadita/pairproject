@@ -1,0 +1,21 @@
+{
+  "name": "PairProject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "pg": "^7.10.0",
+    "rjs": "^4.0.2",
+    "sequelize": "^5.7.5",
+    "sequelize-cli": "^5.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit Information</title>
+
+</head>
+
+<body>
+    <h3>Edit Song</h3>
+    <form method=POST>
+        <table style="width:10%">
+            <% for (let keys in data) { %>
+            <% if (keys !== 'id' && keys !== "createdAt" && keys !== "updatedAt") { %>
+            <tr>
+                <th>
+                    <label for="<%=keys%>">
+                        <%=keys%>
+                    </label>
+                </th>
+                <th>
+                    <input type="text" name="<%=keys%>" value="<%=data[keys]%>">
+                    <br>
+                </th>
+            </tr>
+            <% } %>
+            <% } %>
+            <tr>
+                <th colspan="2">
+                    <br>
+                    <button type="submit">
+                        Edit Song
+                    </button>
+                </th>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>

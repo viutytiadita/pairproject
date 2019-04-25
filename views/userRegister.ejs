@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register MyMusic</title>
+
+</head>
+<body>
+    <h3>Register MyMusic</h3>
+    <form method=POST>
+        <table style="width:10%">
+                <% for (let i = 0; i < column.length; i++) { %>
+                    <% if (column[i] !== 'id') { %>
+                    <tr>
+                    <th>
+                    <label for = "<%=column[i]%>">
+                        <%=column[i]%>
+                    </label>
+                    </th>
+                    <th>
+                    <input type="text" name = "<%=column[i]%>" value = "<%column[i]%>">
+                    <br>
+                    </th>
+                    </tr>
+                    <% } %>
+                <% } %>
+                
+                <tr>
+                    <th colspan="2">  
+                    <br>      
+                    <button type="submit">
+                        Register
+                    </button>
+                    </th>
+                </tr>
+        </table>
+    </form>
+
+
+	
+
+</body>
+</html>

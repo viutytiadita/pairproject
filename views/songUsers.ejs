@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Subject Data</title>
+	<style>
+		table,
+		th,
+		td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		th,
+		td {
+			padding: 5px;
+		}
+	</style>
+</head>
+
+<body>
+	
+	<h2>
+		SONG DATA
+	</h2>
+	<table style="width:40%">
+		<tr>
+			<% for (let i = 0; i < column.length; i++) { %>
+			<th><%=column[i]%></th>
+			<% } %>
+		</tr>
+
+		<% for (let i = 0; i < listdata.length; i++) { %>
+		<tr>
+			<% for (let keys in listdata[i]) { %>
+			<% if (keys !== 'createdAt' && keys !== 'updatedAt') { %>
+			<% if (typeof listdata[i][keys] == 'object') { %>
+			<td> <%-listdata[i][keys].map((t, index)=>`${index+1}. ${t.first_name} ${t.last_name}`).join("<br>")%> </td>
+			<% } else {%>
+			<td><%=listdata[i][keys]%></td>
+			<% } %>
+			<% } %>
+
+		</tr>
+		<% } %>
+
+
+	</table>
+
+
+</body>
+
+</html>

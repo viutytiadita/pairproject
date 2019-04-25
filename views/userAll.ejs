@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>User Data</title>
+	<style>
+		table,
+		th,
+		td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		th,
+		td {
+			padding: 5px;
+		}
+	</style>
+</head>
+
+<body>
+	<h2>
+		User DATA
+	</h2>
+
+	<table style="width:30%">
+		<tr>
+			<% for (let i = 0; i < column.length; i++) { %>
+			<th><%=column[i]%></th>
+			<% } %>
+			<th colspan="2">Options</th>
+		</tr>
+
+		<% for (let i = 0; i < listdata.length; i++) { %>
+		<tr>
+			<% for (let keys in listdata[i]) { %>
+			<% if (keys !== 'createdAt' && keys !== 'updatedAt') { %>
+			<td><%=listdata[i][keys]%></td>
+			<% } %>
+			<% } %>
+
+			<td>
+				<a href="/user/edit/<%=listdata[i].id%>">
+					<button type="button">Edit</button>
+				</a>
+			</td>
+			<td>
+				<a href="/user/delete/<%=listdata[i].id%>">
+					<button type="button" onclick="alert('You are deleting id <%=listdata[i].id%>')">Delete</button>
+				</a>
+			</td>
+		</tr>
+		<% } %>
+
+
+	</table>
+	<br>
+    <br>
+    <a href="/">
+        <button type="button"">Home</button>
+    </a>
+
+
+</body>
+
+</html>

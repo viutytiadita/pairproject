@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>MyMusic</title>
+	<style>
+		table,
+		th,
+		td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		th,
+		td {
+			padding: 5px;
+		}
+	</style>
+</head>
+
+<body>
+	<h2>
+		MyMusic
+	</h2>
+
+	<table style="width:30%">
+		<tr>
+			<% for (let i = 0; i < column.length; i++) { %>
+			<th><%=column[i]%></th>
+			<% } %>
+			<th colspan="2">Options</th>
+		</tr>
+
+		<% for (let i = 0; i < listdata.length; i++) { %>
+		<tr>
+			<% for (let keys in listdata[i]) { %>
+			<% if (keys !== 'createdAt' && keys !== 'updatedAt') { %>
+			<td><%=listdata[i][keys]%></td>
+			<% } %>
+			<% } %>
+
+			<td>
+				<a href="/song/edit/<%=listdata[i].id%>">
+					<button type="button">Edit</button>
+				</a>
+			</td>
+			<td>
+				<a href="/song/delete/<%=listdata[i].id%>">
+					<button type="button" onclick="alert('You are deleting id <%=listdata[i].id%>')">Delete</button>
+				</a>
+			</td>
+		</tr>
+		<% } %>
+
+
+    </table>
+    <a href="/song/register/">
+        <button type="button">Add new song</button>
+    </a>
+	<br>
+	<a href="/song/users/">
+        <button type="button">Users</button>
+    </a>
+    <br>
+    <a href="/">
+        <button type="button"">Home</button>
+    </a>
+
+
+</body>
+
+</html>
